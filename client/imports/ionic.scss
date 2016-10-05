@@ -1,0 +1,31 @@
+// **********************************************************************************************************************************************
+// ionic.scss and ionic.variables.scss is strongly inspired by https://github.com/driftyco/ionic2-app-base/blob/master/src/theme/variables.scss *
+// **********************************************************************************************************************************************
+@charset "UTF-8";
+
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "../../node_modules/ionic-angular/themes/ionic.globals";
+
+@import "./ionic.variables";
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "../../node_modules/ionic-angular/themes/version";
+@import "../../node_modules/ionic-angular/themes/license";
+@import "../../node_modules/ionic-angular/themes/ionic.theme.default";
+@import "../../node_modules/ionic-angular/themes/ionic.components";
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+//$ionicons-font-path: "../assets/fonts";
+@import "../../node_modules/ionic-angular/fonts/ionicons";

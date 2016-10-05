@@ -17,6 +17,9 @@ export class Main {
       }, {
         name: 'Uri',
         age: 30
+      }, {
+        name: 'Steff',
+        age: 41
       }];
       
       data.forEach((obj: DemoDataObject) => {

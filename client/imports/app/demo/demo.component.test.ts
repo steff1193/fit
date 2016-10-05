@@ -8,7 +8,7 @@ import { TestComponentBuilder } from '@angular/compiler';
 
 // Project imports
 import { DemoComponent } from './demo.component';
-import { DemoDataService } from './demo-data.service';
+import { DemoDataService } from '../../both/demo/demo-data.service';
 import { DemoDataObject } from '../../../../both/models/demo-data-object';
 
 describe('DemoComponent', () => {

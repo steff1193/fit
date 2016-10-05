@@ -1,65 +1,64 @@
-# Angular2-Meteor-Base Tutorial
+# Angular2-Ionic2-Meteor-Base
 
-## Usage
+Base project for meteor applications serving a web-application and building to mobile apps. Same meteor-server-backend but different presentation. Web-presentation using Angular 2. Mobile presentation using Ionic 2 with Angular 2
 
-Since Meteor v1.4 you can use one command to create a working Angular2 app based on this boilerplate:
+Fork of [Angular2-Meteor-Base Tutorial](https://github.com/bsliran/angular2-meteor-base). See its README.md
 
-```
-meteor create --example angular2-boilerplate
-```
-
-## Boilerplate Contents
-
-This boilerplate contains the basics that requires to quick start with Angular2-Meteor application.
-
-This package contains:
-
-- TypeScript support and Angular 2 compilers for Meteor
-- Angular2-Meteor
-- Angular2 (core, common, compiler, platform)
-- SASS support
-- Testing framework with Mocha and Chai
-
-This application also contains demo code:
-
-- Main Component (`/client/app.component`)
-- Demo Child Component (`/client/imports/demo/demo.component`)
-- Demo Service (`/client/imports/demo/demo-data.service`)
-- Demo Mongo Collection (`/both/demo-collection.ts`)
-
-The Main component loads the child component, which uses the demo service that gets it's data from the demo collection.
+I am no expert on Meteor, Angular 2 nor Ionic 2, but I got it (kinda) working. Probably not in the most elegant way. Please help making it better by fork and PR.
 
 ## Folder Structure
 
-The folder structure is a mix between [Angular 2 recommendation](https://johnpapa.net/angular-2-styles/) and [Meteor 1.3 recommendation](https://guide.meteor.com/structure.html).
+See [Angular2-Meteor-Base Tutorial - README.md](https://github.com/bsliran/angular2-meteor-base/README.md)
 
 #### Client
 
-The `client` folder contains single TypeScript (`.ts`) file which is the main file (`/client/app.component.ts`), and bootstrap's the Angular 2 application.
+The client has extended structure compared to [Angular2-Meteor-Base Tutorial](https://github.com/bsliran/angular2-meteor-base)
 
-The main component uses HTML template and SASS file.
+`/client/main.ts` bootstraps the application, using Angular 2 modules in `/client/imports/app/app.module.ts` and `/client/imports/mobileapp/app.module.ts` for web and mobile respectively.
 
-The `index.html` file is the main HTML which loads the application by using the main component selector (`<app>`).
+Both show a simple collection of data via `.../app.component.ts` and `.../demo/demo.component.ts`. Shared stuff lives in `/client/both`
 
-All the other client files are under `client/imports` and organized by the context of the components (in our example, the context is `demo`).
+## Running the application
 
+`npm install`
 
-#### Server
+Now go change `node_modules/ionic-angular/fonts/ionicons.scss`. Replace
+```
+@import "ionicons-icons";
+@import "ionicons-variables";
+```
+with
+```
+@import "../../ionicons/dist/scss/ionicons-icons";
+@import "../../ionicons/dist/scss/ionicons-variables";
+```
 
-The `server` folder contain single TypeScript (`.ts`) file which is the main file (`/server/main.ts`), and creates the main server instance, and the starts it.
+Then
+* `npm start` to just serve the web-app
+* `npm run start-ios` to serve the web-app and run the mobile app in iOS simulator
+* `npm run start-android` to serve the web-app and run the mobile app in Android emulator
 
-All other server files should be located under `/server/imports`.
+Running mobile meteor should (and does) start the simulator/emulator, but it is my experience that your are best off starting it yourself beforehand
 
-#### Common
+## Upgrading dependency to ionic-angular
 
-Example for common files in our app, is the MongoDB collection we create - it located under `/both/demo-collection.ts` and it can be imported from both client and server code.
+For now, this project uses ionic-angular version 2.0.0-rc.0, and the tricks to make ionic work may be specific to that version. The tricks are
+* Fixing `node_modules/ionic-angular/fonts/ionicons.scss` as described above
+* Copying non-scss files from `node_modules/ionic-angular/fonts/` to `public/fonts` (guess the ionicons ones could just as well have been copied from `node_modules/ionicons/dist/fonts/`)
 
-## Testing
+Depending on a newer version of ionic-angular in the future may require similar or other fixes, or maybe some of the current fixes can be eliminated
 
-The testing environment in this boilerplate based on [Meteor recommendation](https://guide.meteor.com/testing.html), and uses Mocha as testing framework along with Chai for assertion.
+I guess a particular version of ionic-angular matches a particular version/commit of [Ionic 2 App Base](https://github.com/driftyco/ionic2-app-base), and since `/client/imports/ionic.scss` and `/client/imports/ionic.variables.scss` are strongly inspired by [its variable.scss](https://github.com/driftyco/ionic2-app-base/blob/master/src/theme/variables.scss) those two scss's may have to be modified to fit with the "Ionic 2 App Base" version/commit matching the new version on ionic-angular 
 
-There is a main test file that initialize Angular 2 tests library, it located under `/client/init.test.ts`.
+## Using this project as a base for your own project
 
-All other test files are located near the component/service it tests, with the `.test.ts` extension.
+Just fork on [GitHub](https://github.com/steff1193/angular2-ionic2-meteor-base) and go edit. You probably want to start out with the following
+* Remove the demo code in `/client`, `/server` and `/both` folers
+* Change name in `package.json` and `typings.json`
+* Probably more... (remind me, please)
 
-The `DemoComponent` contains example for Angular 2 tests for Component, and in the server side there is an example for testing Meteor collections and stub data.
+At some point, before going to production, you probably want to
+```
+meteor remove autopublish
+meteor remove insecure
+```

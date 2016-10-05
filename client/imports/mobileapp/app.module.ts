@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { METEOR_PROVIDERS } from 'angular2-meteor';
+import { IonicApp, IonicModule } from 'ionic-angular';
 
 import { AppComponent } from './app.component';
-import { DemoComponent } from './demo/demo.component';
-import { DemoDataService } from '../both/demo/demo-data.service';
+import { DemoComponent } from "./demo/demo.component";
+import { DemoDataService } from "../both/demo/demo-data.service";
 
 @NgModule({
   // Components, Pipes, Directive
@@ -22,9 +21,9 @@ import { DemoDataService } from '../both/demo/demo-data.service';
   ],
   // Modules
   imports: [
-    BrowserModule
+    IonicModule.forRoot(AppComponent)
   ],
   // Main Component
-  bootstrap: [ AppComponent ]
+  bootstrap: [ IonicApp ]
 })
 export class AppModule {}
