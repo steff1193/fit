@@ -8,7 +8,7 @@ I am no expert on Meteor, Angular 2 nor Ionic 2, but I got it (kinda) working. P
 
 ## Folder Structure
 
-See [Angular2-Meteor-Base Tutorial - README.md](https://github.com/bsliran/angular2-meteor-base/README.md)
+See [Angular2-Meteor-Base Tutorial - README.md](https://github.com/bsliran/angular2-meteor-base/blob/master/README.md)
 
 #### Client
 
@@ -48,12 +48,12 @@ For now, this project uses ionic-angular version 2.0.0-rc.0, and the tricks to m
 
 Depending on a newer version of ionic-angular in the future may require similar or other fixes, or maybe some of the current fixes can be eliminated
 
-I guess a particular version of ionic-angular matches a particular version/commit of [Ionic 2 App Base](https://github.com/driftyco/ionic2-app-base), and since `/client/imports/ionic.scss` and `/client/imports/ionic.variables.scss` are strongly inspired by [its variable.scss](https://github.com/driftyco/ionic2-app-base/blob/master/src/theme/variables.scss) those two scss's may have to be modified to fit with the "Ionic 2 App Base" version/commit matching the new version on ionic-angular 
+I guess a particular version of ionic-angular matches a particular version/commit of [Ionic 2 App Base](https://github.com/driftyco/ionic2-app-base), and since `/client/imports/ionic.scss` and `/client/imports/ionic.variables.scss` are strongly inspired by [its variable.scss](https://github.com/driftyco/ionic2-app-base/blob/master/src/theme/variables.scss) those two scss's may have to be modified to fit with the "Ionic 2 App Base" version/commit matching the new version of ionic-angular 
 
 ## Using this project as a base for your own project
 
 Just fork on [GitHub](https://github.com/steff1193/angular2-ionic2-meteor-base) and go edit. You probably want to start out with the following
-* Remove the demo code in `/client`, `/server` and `/both` folers
+* Remove the demo code in `/client`, `/server` and `/both` folders
 * Change name in `package.json` and `typings.json`
 * Probably more... (remind me, please)
 
