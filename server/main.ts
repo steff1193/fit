@@ -1,4 +1,6 @@
 import { Main } from './imports/server-main/main';
 
-const mainInstance = new Main();
-mainInstance.start();
+Meteor.startup(function() {
+    const mainInstance = new Main();
+    mainInstance.start();
+});
