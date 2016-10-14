@@ -9,7 +9,6 @@
 
 @import "./ionic.variables";
 
-
 // App Theme
 // --------------------------------------------------
 // Ionic apps can have different themes applied, which can
@@ -29,3 +28,5 @@
 
 //$ionicons-font-path: "../assets/fonts";
 @import "../../node_modules/ionic-angular/fonts/ionicons";
+
+@import "./ionic.overrides";
