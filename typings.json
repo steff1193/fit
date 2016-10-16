@@ -1,5 +1,5 @@
 {
-  "name": "angular2-ionic2-meteor-base",
+  "name": "fit",
   "version": false,
   "dependencies": {
     "chai-spies": "registry:npm/chai-spies#0.7.1+20160614064916"

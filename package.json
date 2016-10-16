@@ -1,5 +1,5 @@
 {
-  "name": "angular2-ionic2-meteor-base",
+  "name": "fit",
   "private": true,
   "scripts": {
     "start": "meteor run --settings settings.json",
