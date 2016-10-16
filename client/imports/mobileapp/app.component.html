@@ -1,3 +1,35 @@
+<!-- strange but putting the navbar in a header makes the content crawl underneeth it
+<ion-header>
+-->
 <ion-navbar color="primary">
-    <ion-title>Hello Angular2-Meteor!</ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+        {{navBarTitle}}
+    </ion-title>
 </ion-navbar>
+<!-- /ion-header -->
+
+<ion-content>
+    <ion-menu id="unauthenticated" side="left" [content]="content">
+        <ion-content>
+            <ion-list>
+                <button ion-item (click)="openLogin()">
+                    Sign in
+                </button>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+    <ion-menu id="authenticated" side="left" [content]="content">
+        <ion-content>
+            <ion-list>
+                <button ion-item (click)="logout()">
+                    Sign out
+                </button>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <ion-nav #content [root]="root"></ion-nav>
+</ion-content>

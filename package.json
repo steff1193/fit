@@ -2,9 +2,9 @@
   "name": "angular2-ionic2-meteor-base",
   "private": true,
   "scripts": {
-    "start": "meteor run",
-    "start-android": "meteor run android --mobile-server http://10.0.2.2:3000",
-    "start-ios": "meteor run ios --mobile-server http://localhost:3000",
+    "start": "meteor run --settings settings.json",
+    "start-android": "meteor run android --mobile-server http://10.0.2.2:3000 --settings settings.json",
+    "start-ios": "meteor run ios --mobile-server http://localhost:3000 --settings settings.json",
     "postinstall": "typings i"
   },
   "devDependencies": {
@@ -21,6 +21,7 @@
     "angular2-meteor": "0.7.0",
     "angular2-meteor-polyfills": "0.1.1",
     "angular2-meteor-tests-polyfills": "0.0.2",
+    "bcrypt": "^0.8.7",
     "ionic-angular": "^2.0.0-rc.0",
     "ionic-selector": "0.0.2",
     "ionicons": "^3.0.0",
