@@ -5,16 +5,6 @@
 
 $ionic-theme: "My theme";
 
-// Shared Variables
-// --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
-
-$text-color:          #ffaaaa;
-$background-color:    #550000;
-
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -24,10 +14,23 @@ $background-color:    #550000;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-        primary:    #ffff00,
-        secondary:  #0000ff,
+        primary:    #0c7006,
+        secondary:  #84ef7f,
         danger:     #ff0000,
         light:      #f4f4f4,
         dark:       #222,
         favorite:   #00ff00
 );
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$text-color:          #0a2d08;
+$background-color:    #f2fff2;
+$menu-ios-box-shadow-color: #666666;
+$button-round-border-radius: 8px;
+
