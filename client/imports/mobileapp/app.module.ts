@@ -2,14 +2,11 @@ import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 
 import { AppComponent } from './app.component';
-import { DemoComponent } from "./demo/demo.component";
-import { DemoDataService } from "../both/demo/demo-data.service";
 
 @NgModule({
   // Components, Pipes, Directive
   declarations: [
     AppComponent,
-    DemoComponent
   ],
   // Entry Components
   entryComponents: [
@@ -17,7 +14,6 @@ import { DemoDataService } from "../both/demo/demo-data.service";
   ],
   // Providers
   providers: [
-    DemoDataService
   ],
   // Modules
   imports: [
