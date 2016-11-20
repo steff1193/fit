@@ -20,12 +20,12 @@ export class AppComponent extends MeteorComponent {
   constructor(public menuCtrl: MenuController) {
     super();
     this.navBarTitle = "Fit, me and you"
-    this.root = (Meteor.loggingIn())?ExerciseTemplatesComponent:LoginComponent;
+    this.root = LoginComponent;
   }
 
   logout() {
     Meteor.logout();
-    this.nav.setRoot(LoginComponent);
+    this.nav.popToRoot();
     this.menuCtrl.close();
   }
 

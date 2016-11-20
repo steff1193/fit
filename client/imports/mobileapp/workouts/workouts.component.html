@@ -1,0 +1,11 @@
+<ion-content>
+    <ion-list>
+        <!-- ion-item *ngFor="let w of workouts | async" (click)="edit({{w}})" -->
+        <ion-item *ngFor="let w of workouts | async" (click)="edit(w)">
+            <ion-icon name="star" color="danger"></ion-icon>{{w.name}}
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-fab right edge>
+    <button ion-fab mini color="secondary" (click)="add()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>

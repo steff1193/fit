@@ -1,29 +1,21 @@
-import { ExerciseTemplatePrivacy } from "../../../both/models/workout-and-exercies";
 import { ExerciseTemplatesCollection } from "../../../both/collections/exercise-templates.collection";
 
 function buildQuery(exerciseTemplateId?: string): Object {
     // TODO find from user/profile database via this.userId/Meteor.user
     const personalTrainersIds = [ "xxx", "yyy" ];
 
-    const meAndPersonalTrainersIds = personalTrainersIds.concat([this.userId]);
-    console.log("meAndPersonalTrainersIds: " + meAndPersonalTrainersIds);
+    console.log("personalTrainersIds: " + personalTrainersIds);
 
     const isAvailable = {
         $or: [
-            { privacy: ExerciseTemplatePrivacy.Public },
+            { ownerUserId: "__system__" },
             {
                 $and: [
-                    { privacy: ExerciseTemplatePrivacy.PersonalTrainees },
-                    { ownerUserId: { $in: meAndPersonalTrainersIds } },
-                    { ownerUserId: { $exists: true } }
+                    { availableTrainees: true },
+                    { ownerUserId: { $in: personalTrainersIds } }
                 ]
-            }, {
-                $and: [
-                    { privacy: ExerciseTemplatePrivacy.Private },
-                    { ownerUserId: this.userId },
-                    { ownerUserId: { $exists: true } }
-                ]
-            }
+            },
+            { ownerUserId: this.userId }
         ]
     };
 

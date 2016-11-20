@@ -7,8 +7,18 @@ function loggedIn() {
     return !!Meteor.user();
 }
 
-ExerciseTemplatesCollection.allow({
+/*ExerciseTemplatesCollection.allow({
     insert: loggedIn,
     update: loggedIn,
     remove: loggedIn
+});*/
+
+Meteor.methods({
+    // TODO add some security here - probably sharing stuff with publications
+    "insertExerciseTemplate": function (exerciseTemplate: ExerciseTemplate) {
+        ExerciseTemplatesCollection.insert(exerciseTemplate);
+    },
+    "updateExerciseTemplate": function (exerciseTemplate: ExerciseTemplate) {
+        ExerciseTemplatesCollection.update({ "_id": exerciseTemplate._id }, exerciseTemplate );
+    }
 });

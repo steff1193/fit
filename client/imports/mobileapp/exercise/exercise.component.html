@@ -1,0 +1,30 @@
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>Name</ion-label>
+            <ion-input type="text" [(ngModel)]="exercise.name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Description</ion-label>
+            <ion-textarea rows="5" [(ngModel)]="exercise.description"></ion-textarea>
+        </ion-item>
+        <ion-item *ngFor="let v of exercise.variables">
+            <ion-label stacked>{{v.name}}</ion-label>
+            <ion-input type="number" [(ngModel)]="v.value"></ion-input>
+            <ion-select [(ngModel)]="v.unit">
+                <ion-option value="repetitions">Repetitions</ion-option>
+                <ion-option value="minutes">Minutes</ion-option>
+                <ion-option value="seconds">Seconds</ion-option>
+                <ion-option value="kilometers">Kilometers</ion-option>
+                <ion-option value="meters">Meters</ion-option>
+                <ion-option value="kilos">Kilos</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Visible for personal trainees</ion-label>
+            <ion-checkbox [(ngModel)]="exercise.availableTrainees"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+    <button ion-button class="two-hori-button-left" round color="secondary" (click)="cancel()">Cancel</button>
+    <button ion-button class="two-hori-button-right" round color="secondary" (click)="ok()">Ok</button>
+</ion-content>
