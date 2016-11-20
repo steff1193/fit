@@ -14,6 +14,7 @@ import { LoginComponent } from "./login/login.component";
   ],
   // Entry Components
   entryComponents: [
+    AppComponent,
     LoginComponent,
     ExerciseTemplatesComponent
   ],
